@@ -1,9 +1,6 @@
-#ifndef LISTE_PERS_H
-#define LISTE_PERS_H
+#ifndef LISTEPERS_H
+#define LISTEPERS_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include <stdbool.h>
 
 struct Date
@@ -23,6 +20,7 @@ struct Boitep
     struct Boitep *lien;
 };
 
+/* On définit Listep comme pointeur sur Boitep */
 typedef struct Boitep *Listep;
 
 // Prototypes
@@ -30,12 +28,19 @@ void saisir_date(struct Date *d);
 void affiche_date(struct Date *d);
 void saisir_personne(struct Personne *p);
 void affiche_personne(struct Personne p);
+/* Cree une liste vide */
 void cree_liste(Listep *l);
-int vide(Listep l);
-int nb_elem(Listep l);
+/* Teste si la liste esr vide */
+bool vide(Listep l);
+int taille(Listep l);
 void affiche_liste(Listep l);
+/* insérer la personne selon son nom dans la liste
+ de façon à conserver la liste des personnes
+ ordonnée par nom croissant dans l'ordre lexicographe */
 void inserer_ordre_lexico(struct Personne p, Listep *lc);
 void sauvegarde_liste(Listep l, const char *filename);
 void restaure_liste(Listep *l, const char *filename);
+/* Libère la mémoire allouée pour la liste l*/
 void liberer_liste(Listep *l);
+
 #endif

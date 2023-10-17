@@ -7,15 +7,15 @@ int main()
     cree_liste(&lp);
     printf("\n Saisie 1ere personne :");
     saisir_personne(&pers);
-    inserer_ordre(pers, &lp);
+    inserer_ordre_lexico(pers, &lp);
     printf("\n Saisie 2eme personne :");
     saisir_personne(&pers);
-    inserer_ordre(pers, &lp);
+    inserer_ordre_lexico(pers, &lp);
     printf("\n");
     affiche_liste(lp);
     printf("\n Saisie 3eme personne :");
     saisir_personne(&pers);
-    inserer_ordre(pers, &lp);
+    inserer_ordre_lexico(pers, &lp);
     affiche_liste(lp);
     sauvegarde_liste(lp, "liste.pers");
     liberer_liste(lp);
