@@ -34,7 +34,7 @@ void cree_liste(Listep *l);
 int vide(Listep l);
 int nb_elem(Listep l);
 void affiche_liste(Listep l);
-void inserer_ordre(struct Personne p, Listep *lc);
+void inserer_ordre_lexico(struct Personne p, Listep *lc);
 void sauvegarde_liste(Listep l, const char *filename);
 void restaure_liste(Listep *l, const char *filename);
 void liberer_liste(Listep *l);
